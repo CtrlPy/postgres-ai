@@ -18,7 +18,7 @@ server:
   #
   # Database Lab Engine can be running with an empty verification token, which is not recommended.
   # In this case, the DLE API and the UI application will not require any credentials.
-  verificationToken: "secret_token"
+  verificationToken: "05c4c1c217707c73e6f6a90d85fc83fc"
 
 
   # HTTP server port. Default: 2345.
@@ -37,7 +37,7 @@ embeddedUI:
   # Host or IP address, from which the embedded UI container accepts HTTP connections.
   # By default, use a loop-back to accept only local connections.
   # The empty string means "all available addresses".
-  host: "127.0.0.1"
+  host: "0.0.0.0"
 
   # HTTP port of the UI application. Default: 2346.
   port: 2346
@@ -101,7 +101,7 @@ databaseContainer: &db_container
   # It is possible to choose any custom or official Docker image that runs Postgres. Our Dockerfile
   # (See https://gitlab.com/postgres-ai/custom-images/-/tree/master/extended)
   # is recommended in case if customization is needed.
-  dockerImage: "postgresai/extended-postgres:15-0.4.1"
+  dockerImage: "postgresai/extended-postgres:16-0.4.2"
 
   # Container parameters, see
   # https://docs.docker.com/engine/reference/run/#runtime-constraints-on-resources
@@ -147,7 +147,7 @@ provision:
   # By default, using a loop-back to accept only local connections.
   # The empty string means "all available addresses".
   # The option supports multiple IPs (using comma-separated format) and IPv6 addresses (for example, [::1])
-  cloneAccessAddresses: "127.0.0.1"
+  cloneAccessAddresses: ""
 
 # Data retrieval flow. This section defines both initial retrieval, and rules
 # to keep the data directory in a synchronized state with the source. Both are optional:
@@ -213,13 +213,13 @@ retrieval:
             # Currently, only password can be specified via environment variable (PGPASSWORD),
             # everything else needs to be specified here.
             dbname: postgres
-            host: 34.56.78.90
+            host: 192.168.1.179
             port: 5432
             username: postgres
 
             # Connection password. The environment variable PGPASSWORD can be used instead of this option.
             # The environment variable has a higher priority.
-            password: postgres
+            password: yoshi5432
 
         # Option for specifying the database list that must be copied.
         # By default, DLE dumps and restores all available databases.
@@ -378,7 +378,7 @@ platform:
   # Used to analyze DLE usage, it helps the DLE maintainers make decisions on product development.
   # Please leave it enabled if possible – this will contribute to DLE development.
   # The full list of data points being collected: https://postgres.ai/docs/database-lab/telemetry
-  enableTelemetry: true
+  enableTelemetry: false
 #
 #  # Project name
 #  projectName: "project_name"

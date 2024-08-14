@@ -25,7 +25,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/lib/dblab:/var/lib/dblab/:rshared
-      - ./server.yml:/home/dblab/configs
+      - ./server.yml:/home/dblab/configs/server.yml
       - ~/.dblab/engine/meta:/home/dblab/meta
       - ~/.dblab/engine/logs:/home/dblab/logs
     ports:

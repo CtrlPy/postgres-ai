@@ -11,6 +11,8 @@ docker install:
 
 #
 
+* step1 
+
 `sudo apt-get install -y zfsutils-linux`
 
 
@@ -29,6 +31,15 @@ docker install:
 
   `sudo zfs list`
 
+
+* step2
+
+
+
+`git clone https://github.com/CtrlPy/postgres-ai.git`
+
+
+* step3
 #
 
 

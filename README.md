@@ -4,39 +4,55 @@
 docker install: 
 
 
- `curl -fsSL https://get.docker.com | bash && sudo usermod -aG docker $USER && exit`
+ ```zsh
+ curl -fsSL https://get.docker.com | bash && sudo usermod -aG docker $USER && exit
+ ```
 
 
 `lsblk`
+
+
+
 
 #
 
 * step1 
 
-`sudo apt-get install -y zfsutils-linux`
+*before installing zfsutils-linux you must prepare your disk, namely mount a new partition for zfs*
+
+
+```zsh
+sudo apt-get install -y zfsutils-linux
+```
 
 
 
-`sudo zpool create -f \
+```zsh
+sudo zpool create -f \
   -O compression=on \
   -O atime=off \
   -O recordsize=128k \
   -O logbias=throughput \
   -m /var/lib/dblab/dblab_pool \
   dblab_pool \
-  "sdb"`
+  "sdb"
+  ```
 
 
 
 
-  `sudo zfs list`
+  ```zsh
+  sudo zfs list
+  ```
 
 
 * step2
 
 
 
-`git clone https://github.com/CtrlPy/postgres-ai.git`
+```zsh
+git clone https://github.com/CtrlPy/postgres-ai.git
+```
 
 
 * step3

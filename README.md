@@ -1,4 +1,4 @@
-## postgres-ai
+## Postgres-ai
 
 
 docker install: 
@@ -57,7 +57,7 @@ git clone https://github.com/CtrlPy/postgres-ai.git
 
 
 
-### change config file  *server.yml*
+#####  change config file  *server.yml*
 
 * The quick and simple editor for cron schedule expressions by Cronitor https://crontab.guru/every-2-minutes
 

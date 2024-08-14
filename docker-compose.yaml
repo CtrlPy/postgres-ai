@@ -17,3 +17,20 @@ services:
 volumes:
   postgres_data:
     driver: local
+
+dblab_server:
+    image: postgresai/dblab-server:3.5.0
+    container_name: dblab_server
+    privileged: true
+    labels:
+      - dblab_control
+    environment:
+      DOCKER_API_VERSION: 1.39
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/dblab:/var/lib/dblab/:rshared
+      - ./server.yaml:/home/dblab/configs/server.yaml
+      - ~/.dblab/engine/meta:/home/dblab/meta
+      - ~/.dblab/engine/logs:/home/dblab/logs
+    ports:
+      - "2345:2345"

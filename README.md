@@ -1,4 +1,4 @@
-# postgres-ai
+## postgres-ai
 
 
 docker install: 
@@ -53,6 +53,14 @@ sudo zpool create -f \
 ```zsh
 git clone https://github.com/CtrlPy/postgres-ai.git
 ```
+
+
+
+
+### change config file  *server.yml*
+
+* The quick and simple editor for cron schedule expressions by Cronitor https://crontab.guru/every-2-minutes
+
 
 
 * step3

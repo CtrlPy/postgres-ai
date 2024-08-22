@@ -1,4 +1,5 @@
-version: "3.8"
+version: '3.8'
+
 services:
   postgres:
     image: postgres:latest
@@ -11,9 +12,8 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./initdb:/docker-entrypoint-initdb.d
     ports:
-      - 5432:5432
-    networks:
-      - dblab_network
+      - "5432:5432"
+
   dblab_server:
     image: postgresai/dblab-server:3.5.0
     container_name: dblab_server
@@ -29,14 +29,8 @@ services:
       - ~/.dblab/engine/meta:/home/dblab/meta
       - ~/.dblab/engine/logs:/home/dblab/logs
     ports:
-      - 2345:2345
-    restart: always
-    networks:
-      - dblab_network
+      - "2345:2345"
 
 volumes:
   postgres_data:
-
-networks:
-  dblab_network:
-    driver: bridge
+    driver: local

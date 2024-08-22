@@ -5,9 +5,9 @@ services:
     image: postgres:latest
     container_name: postgres_db
     environment:
-      POSTGRES_USER: yoshi
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: yoshi5432
-      POSTGRES_DB: yoshidb
+      POSTGRES_DB: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./initdb:/docker-entrypoint-initdb.d

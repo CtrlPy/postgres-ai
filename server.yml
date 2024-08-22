@@ -54,10 +54,10 @@ global:
   database:
     # Default database username that will be used for Postgres management connections.
     # This user must exist.
-    username: yoshi
+    username: postgres
 
     # Default database name.
-    dbname: yoshidb
+    dbname: postgres
 
 # Manages filesystem pools (in the case of ZFS) or volume groups.
 poolManager:
@@ -212,10 +212,10 @@ retrieval:
             # Database connection parameters.
             # Currently, only password can be specified via environment variable (PGPASSWORD),
             # everything else needs to be specified here.
-            dbname: yoshidb
+            dbname: postgres
             host: 192.168.1.179
             port: 5432
-            username: yoshi
+            username: postgres
 
             # Connection password. The environment variable PGPASSWORD can be used instead of this option.
             # The environment variable has a higher priority.

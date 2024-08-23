@@ -213,7 +213,7 @@ retrieval:
             # Currently, only password can be specified via environment variable (PGPASSWORD),
             # everything else needs to be specified here.
             dbname: postgres
-            host: 192.168.1.179
+            host: 192.168.1.179  #your hostname
             port: 5432
             username: postgres
 

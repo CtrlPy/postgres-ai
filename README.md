@@ -26,6 +26,8 @@ sudo apt-get install -y zfsutils-linux
 ```
 
 
+## Automatic full refresh data from a source
+
 
 ```zsh
 sudo zpool create -f \
@@ -33,10 +35,25 @@ sudo zpool create -f \
   -O atime=off \
   -O recordsize=128k \
   -O logbias=throughput \
-  -m /var/lib/dblab/dblab_pool \
-  dblab_pool \
+  -m /var/lib/dblab/dblab_pool_1 \
+  dblab_pool_1 \
   "sdb"
   ```
+
+
+
+```zsh
+sudo zpool create -f \
+  -O compression=on \
+  -O atime=off \
+  -O recordsize=128k \
+  -O logbias=throughput \
+  -m /var/lib/dblab/dblab_pool_2 \
+  dblab_pool_2 \
+  "sdc"
+  ```
+
+
 
 
 
